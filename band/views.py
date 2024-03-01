@@ -4,8 +4,10 @@ from .models import Band, MembershipType, Membership
 from django.contrib import messages
 from django.core.mail import send_mail
 from accounts.models import CustomUser
+from django.contrib.auth.decorators import login_required
 
 
+@login_required
 def membership_success(request):
     return render(request, 'band/membership_success.html')
 
@@ -17,6 +19,8 @@ def band_detail(request, band_id):
     band = get_object_or_404(Band, id=band_id)
     return render(request, 'band/band_detail.html', {'band': band})
 
+
+@login_required
 def create_membership(request, band_id):
     band = get_object_or_404(Band, id=band_id)
 
