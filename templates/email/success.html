@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class=" relative" style="height:30vh">
+    <div class="bg-cover bg-center w-full h-full relative" style="background-image: url('https://www.nathanreinds.nl/wp-content/uploads/2021/04/NATHANREINDS-ESC2021-Fotos-LR-website-126.jpg');">
+    <!-- Content -->
+    <h1 class="text-3xl font-bold text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">EMAIL SENT</h1>
+    </div>
+</section>
+
+<div class="bg-grayishBlack mx-auto py-16 px-10">
+    <div class="bg-darkBG max-w-2xl mx-auto p-8 rounded-lg shadow-md">
+
+        <div class="container mt-4">
+            <div class="card text-white mb-3 mx-auto max-w-sm">
+                <div class="card-header">SUCCESS...!</div>
+                <div class="card-body">
+                    <h5 class="card-title">Email Sent Successfully!</h5>
+                    <p class="card-text">Thank you for sending customised mail.</p>
+                </div>
+                <div class="flex justify-center mt-8">
+                    <a href="{% url 'send_email' %}" class="bg-mainRed text-white py-2 px-4 rounded-full text-sm hover:bg-darkRed transition-colors duration-300">Send Another Email</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class=" relative" style="height:30vh">
+    <div class="bg-cover bg-center w-full h-full relative" style="background-image: url('https://www.nathanreinds.nl/wp-content/uploads/2021/04/NATHANREINDS-ESC2021-Fotos-LR-website-126.jpg');">
+    <!-- Content -->
+    <h1 class="text-3xl font-bold text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">BANDS</h1>
+    </div>
+</section>
+
+  <div class="container mx-auto mt-8">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+      {% for band in bands %}
+        <div class="max-w-sm rounded overflow-hidden shadow-lg">
+          <img class="w-full h-48 object-cover" src="{{ band.cover_image.url }}" alt="{{ band.name }}">
+          <div class="px-6 py-4">
+            <div class="font-bold text-xl mb-2">{{ band.name }}</div>
+            <a href="{% url 'band_detail' band.id %}" class="text-mainRed hover:underline">View Details</a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}

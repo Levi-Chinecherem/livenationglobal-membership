@@ -1,0 +1,21 @@
+<!-- band/templates/band/membership_success.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="bg-grayishBlack flex items-center justify-center h-screen">
+    <div class="max-w-md bg-white p-8 rounded-lg shadow-md glassmorphism hover:glassmorphism-hover">
+      <h2 class="text-4xl font-bold mb-6 text-center">🎉Membership🎉 Registration Successful!</h2>
+      <p class="text-lg leading-relaxed mb-4">
+        Congratulations! You are now an official member of our community. Our admins will reach you with further detials through your registered email. Your support means the world to us! 🌍
+      </p>
+      <p class="text-lg leading-relaxed mb-4">
+        We're excited to have you on board. Explore more about other bands or get in touch if you have any requests. 🎸🎤
+      </p>
+      <div class="flex justify-center">
+        <a href="{% url 'home' %}" class="bg-mainRed text-white py-2 px-4 rounded-full text-sm hover:bg-darkRed transition-colors duration-300 mr-4">Back to Home 🏡</a>
+        <a href="{% url 'contact' %}" class="bg-darkBG text-white py-2 px-4 rounded-full text-sm hover:bg-navLink transition-colors duration-300">Contact Us 📧</a>
+      </div>
+    </div>
+  </div>
+{% endblock %}

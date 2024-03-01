@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}livenationglobal{% endblock %}</title>
+  <meta name="description" content="livenationglobal.live">
+  <link rel="icon" type="image/x-icon" href="{% static 'favicon.png' %}">
+
+  <!-- path to tailwind CSS file link -->
+  <link href="{% static 'css/main.css' %}" rel="stylesheet">
+  <!-- Include CKEditor scripts -->
+  <script type="text/javascript" src="{% static 'root/ckeditor/ckeditor-init.js' %}"></script>
+  <script type="text/javascript" src="{% static 'root/ckeditor/ckeditor/ckeditor.js' %}"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        colors: {
+          mainRed: '#FF0000', // Main red color
+          darkBG: '#1f2937', // Darker red for hover
+          darkRed: '#CC0000', // Darker red for hover
+          lightRed: '#FF6666', // Lighter red for button background
+          white: '#FFFFFF', // White color
+          grayishBlack: '#333333', // Grayish black for text
+          lightGray: '#CCCCCC', // Light gray for borders and other elements
+          backgroundGray: '#F7F7F7', // Light gray for background
+          navLink: '#555555', // Dark gray for navigation links
+          navLinkHover: '#FF0000', // Darker gray for hover on navigation links
+        },
+      }
+    }
+  </script>
+
+  <!-- Swiper CSS -->
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+<!-- Swiper JS -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <style>
+      /* Glassmorphism Style */
+    .glassmorphism {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    /* Glassmorphism Hover Effect */
+    .glassmorphism-hover:hover {
+      transform: scale(1.02);
+      transition: transform 0.3s ease-in-out;
+    }
+    </style>
+</head>
+<body>
+  <div class="'container relative mx-auto">
+
+    <!-- Desktop Navigation -->
+    <nav class="absolute w-full z-10 hidden md:flex items-center justify-between bg-background p-4" id="desktop">
+      <!-- Logo on the left -->
+      <div>
+        <img src="https://www.livenationentertainment.com/wp-content/themes/lne/img/logo.png" alt="Logo" class="h-8 transition-transform duration-300 transform hover:scale-105">
+      </div>
+
+      <!-- Navigation links in the center -->
+      <div class="flex items-center space-x-4">
+        <a href="{% url 'home' %}" class="text-white text-sm border-b-2 border-white hover:border-b-2 hover:border-navLinkHover transition-colors duration-800">Home</a>
+        <a href="{% url 'about' %}" class="text-white text-sm border-b-2 border-white hover:border-b-2 hover:border-navLinkHover transition-colors duration-800">About</a>
+        <a href="{% url 'band_list' %}" class="text-white text-sm border-b-2 border-white hover:border-b-2 hover:border-navLinkHover transition-colors duration-800">Bands</a>
+        <a href="{% url 'contact' %}" class="text-white text-sm border-b-2 border-white hover:border-b-2 hover:border-navLinkHover transition-colors duration-800">Contact</a>
+        {% if user.is_authenticated %}
+        <a href="{% url 'change_password' %}" class="text-white text-xs border-b-2 border-lightGray hover:border-b-2 hover:border-navLinkHover transition-all duration-800">Change Password</a>
+        {% endif %}
+        {% if user.is_staff %}
+        <a href="{% url 'send_email' %}" class="text-white text-xs border-b-2 border-lightGray hover:border-b-2 hover:border-navLinkHover transition-all duration-800">Send Membership Mails</a>
+        {% endif %}
+      </div>
+
+      {% if user.is_authenticated %}
+        <!-- If the user is authenticated, show the logout link -->
+        <a href="{% url 'logout' %}" class="bg-mainRed text-white py-2 px-4 rounded-full text-sm hover:bg-darkRed transition-colors duration-300">Logout</a>
+      {% else %}
+        <!-- If the user is not authenticated, show the login link -->
+        <a href="{% url 'login' %}" class="bg-mainRed text-white py-2 px-4 rounded-full text-sm hover:bg-darkRed transition-colors duration-300">Sign In</a>
+      {% endif %}
+
+    </nav>
+
+    <!-- Mobile Navigation -->
+    <nav class="absolute w-full z-50 md:hidden flex flex-row items-center justify-between bg-background p-4">
+      <!-- Logo on the left (you can use the same logo as desktop) -->
+      <div>
+        <img src="https://www.livenationentertainment.com/wp-content/themes/lne/img/logo.png" alt="Logo" class="h-6 transition-transform duration-300 transform hover:scale-105">
+      </div>
+
+      <!-- Hamburger icon for mobile -->
+      <div class="block lg:hidden">
+        <button id="hamburger-icon" class="text-white hover:text-gray-300 focus:outline-none" aria-label="Toggle Mobile Navigation">
+          <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile Navigation Links -->
+      <div id="mobile" class="mobile_nav hidden w-full border-0 pt-10 px-12 pb-5 backdrop-brightness-50 rounded-t-full border-darkRed transition-all duration-300 absolute top-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center space-y-4">
+        <br>
+        <a href="{% url 'home' %}" class="text-white text-xs border-b-2 border-lightGray hover:border-b-2 hover:border-navLinkHover transition-all duration-800">Home</a>
+        <a href="{% url 'about' %}" class="text-white text-xs border-b-2 border-lightGray hover:border-b-2 hover:border-navLinkHover transition-all duration-800">About</a>
+        <a href="{% url 'band_list' %}" class="text-white text-xs border-b-2 border-lightGray hover:border-b-2 hover:border-navLinkHover transition-all duration-800">Bands</a>
+        <a href="{% url 'contact' %}" class="text-white text-xs border-b-2 border-lightGray hover:border-b-2 hover:border-navLinkHover transition-all duration-800">Contact</a>
+        {% if user.is_authenticated %}
+        <a href="{% url 'change_password' %}" class="text-white text-xs border-b-2 border-lightGray hover:border-b-2 hover:border-navLinkHover transition-all duration-800">Change Password</a>
+        {% endif %}
+        {% if user.is_staff %}
+        <a href="{% url 'send_email' %}" class="text-white text-xs border-b-2 border-lightGray hover:border-b-2 hover:border-navLinkHover transition-all duration-800">Send Membership Mails</a>
+        {% endif %}
+
+        
+        <!-- Signup link styled as a button on the right -->
+        <br><br>
+        {% if user.is_authenticated %}
+          <!-- If the user is authenticated, show the logout link -->
+          <a href="{% url 'logout' %}" class="bg-mainRed text-white py-2 px-4 rounded-full text-sm hover:bg-darkRed transition-colors duration-300">Logout</a>
+        {% else %}
+          <!-- If the user is not authenticated, show the login link -->
+          <a href="{% url 'login' %}" class="bg-mainRed text-white py-2 px-4 rounded-full text-sm hover:bg-darkRed transition-colors duration-300">Sign In</a>
+        {% endif %}
+
+      </div>
+    </nav>
+
+    <!-- Your content goes here -->
+    {% block content %}{% endblock %}
+
+  <!-- Footer Section -->
+    <!-- Swap dark-theme to light-theme for light color theme -->
+  <footer id="" class='bg-darkRed bottom-0 left-0 flex flex-col w-full gap-8 px-8 py-4 md:gap-12'>
+
+    <div class='flex flex-col items-center gap-6 md:flex-row md:justify-between '>
+      <div class="text-white">
+        LIVENATIONGLOBAL &#169; 2024
+      </div>
+      <div class='flex gap-4 p-2 rounded-md social-wrapper'>
+        services@livenationglobal.live
+      </div>
+    </div>
+  </footer>
+
+  </div>
+
+  <script>
+    document.getElementById('hamburger-icon').addEventListener('click', function () {
+      document.getElementById('mobile').classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>

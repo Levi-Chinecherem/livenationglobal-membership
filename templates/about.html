@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+  <!-- Hero Section -->
+    <section class=" relative" style="height:30vh">
+        <div class="bg-cover bg-center w-full h-full relative" style="background-image: url('https://www.nathanreinds.nl/wp-content/uploads/2021/04/NATHANREINDS-ESC2021-Fotos-LR-website-126.jpg');">
+        <!-- Content -->
+        <h1 class="text-3xl font-bold text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">ABOUT</h1>
+        </div>
+    </section>
+
+  <!-- Live Nation Global Section -->
+  <section class="bg-darkRed py-16 text-white">
+    <div class="container mx-auto">
+      <div class="max-w-2xl mx-auto">
+        <h2 class="text-4xl font-bold mb-8">Live Nation Global</h2>
+        <p class="text-lg leading-relaxed mb-8">
+          Live Nation Entertainment is the heartbeat of live entertainment, offering an array of experiences for music enthusiasts across genres. From pop and rock to hip-hop, we cater to every musical taste.
+        </p>
+        <p class="text-lg leading-relaxed mb-8">
+          Explore new artists, secure membership fan cards for your favorite band's concerts and festivals, and enjoy exclusive perks such as VIP packages and meet and greets. Connect with fellow fans through social media, fan clubs, and live streaming events.
+        </p>
+        <p class="text-lg leading-relaxed">
+          At Live Nation Global, we strive to unite people through the transformative power of live entertainment. Our commitment is to continuously craft new and innovative experiences, providing you with novel ways to immerse yourself in the world of music.
+        </p>
+       
+      </div>
+    </div>
+  </section>
+
+  <!-- WE LIVE FOR ARTISTS Section -->
+  <section class="py-16">
+    <div class="container mx-auto">
+      <div class="max-w-2xl mx-auto">
+        <h2 class="text-4xl font-bold mb-8">WE LIVE FOR ARTISTS</h2>
+        <p class="text-lg leading-relaxed mb-8">
+          Artists are the lifeblood of our mission, and we hold deep respect for their creative spirit. Live music is integral to art and culture, and in 2019, we contributed over $6 billion to artists, solidifying Live Nation as the largest financial supporter of musicians globally. Beyond tours and festivals, our Artist Nation group provides services such as management, business marketing, and consulting across all genres.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONCERTS Section -->
+  <section class="py-16 bg-darkRed text-white border-b-2 border-red-50">
+    <div class="container mx-auto">
+      <div class="max-w-2xl mx-auto">
+        <h2 class="text-4xl font-bold mb-8">CONCERTS</h2>
+        <p class="text-lg leading-relaxed mb-8">
+          We proudly stand as the world’s largest producer of live entertainment.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  {% comment %} <!-- Sponsor Logos Section -->
+  <section class="py-16 bg-gray-100">
+    <div class="container mx-auto">
+      <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
+        <!-- Add sponsor logos here -->
+        <!-- Example: <img src="path_to_sponsor_logo" alt="Sponsor Logo" class="max-w-full"> -->
+      </div>
+    </div>
+  </section> {% endcomment %}
+
+{% endblock %}
