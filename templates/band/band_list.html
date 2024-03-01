@@ -10,7 +10,7 @@
 </section>
 
   <div class="px-6 container mx-auto mt-8">
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+    <div class="grid py-10 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
       {% for band in bands %}
         <div class="max-w-sm rounded overflow-hidden shadow-lg">
           <img class="w-full h-48 object-cover" src="{{ band.cover_image.url }}" alt="{{ band.name }}">
