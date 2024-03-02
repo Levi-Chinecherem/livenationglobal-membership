@@ -19,21 +19,37 @@
 <!-- WE ARE LIVE NATION Section -->
 <section class="pt-10 pb-3 bg-gray-300">
   <div class="container mx-auto px-3">
-    <h2 class="text-4xl font-bold mb-8 text-center">WE ARE LIVE NATION</h2>
+    <h2 class="text-4xl font-bold text-center">WE ARE LIVE NATION</h2>
 
-    <div class="flex flex-col md:flex-row items-center justify-between">
-      <blockquote class="p-10 md:pl-8">
-        <p class="text-lg leading-relaxed">
-            As the world’s leading live entertainment company, we are privileged to work with artists to bring their creativity to life on stages around the world. Whether it’s two hours at a packed club, or an entire weekend of sets at a festival, a live show does more than entertain. It can uplift, inspire and create a memory that lasts a lifetime.
-        </p>
-    </blockquote>
-    
+    <blockquote class="p-4 md:pl-8 ">
+      <p class="text-lg text-justify md:px-60 mx-auto">
+          As the world’s leading live entertainment company, we are privileged to work with artists to bring their creativity to life on stages around the world. Whether it’s two hours at a packed club, or an entire weekend of sets at a festival, a live show does more than entertain. It can uplift, inspire and create a memory that lasts a lifetime.
+      </p>
+  </blockquote>
 
-      <!-- Image on the second half (md:w-1/2) -->
-      <div class="md:w-1/2">
-        <img src="https://th.bing.com/th/id/R.2d3f8e3f3ceb8b4bb9e511301e444f0c?rik=N7B8Ew4r8RwFLw&riu=http%3a%2f%2fimages2.fanpop.com%2fimages%2fphotos%2f4700000%2felvis-elvis-presley-4790512-1280-1024.jpg&ehk=v2zBRgvdszUYxSUGQ4wKhisbrXcLbAHazaQqSr5If9o%3d&risl=&pid=ImgRaw&r=0" alt="Live Nation Image" class="w-full h-auto  rounded-md">
+    <div class="flex -mx-1 mb-5">
+      <div class="w-1/2 px-1">
+          <a href="{% url 'band_list' %}" class="block mb-2 p-5 rounded overflow-hidden transform transition-all duration-300 scale-100 hover:scale-95" style="background: url(https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60) center; background-size: cover;">
+              <div class="h-24"></div>
+              <h3 class="text-lg font-bold text-white leading-tight">Join Bands</h3>
+          </a>
+          <a href="{% url 'create_vacation' %}" class="block mb-2 p-5 rounded overflow-hidden transform transition-all duration-300 scale-100 hover:scale-95" style="background: url(https://images.unsplash.com/photo-1534329539061-64caeb388c42?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60) center; background-size: cover;">
+              <div class="h-32"></div>
+              <h3 class="text-lg font-bold text-white leading-tight">Vacation</h3>
+          </a>
+      </div>
+      <div class="w-1/2 px-1">
+          <a href="{% url 'create_autograph' %}" class="block mb-2 p-5 rounded overflow-hidden transform transition-all duration-300 scale-100 hover:scale-95" style="background: url(https://images.unsplash.com/photo-1526661934280-676cef25bc9b?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60) center; background-size: cover;">
+              <div class="h-32"></div>
+              <h3 class="text-lg font-bold text-white leading-tight">Meet & Greet/Autograph</h3>
+          </a>
+          <a href="{% url 'general_membership' %}" class="block mb-2 p-5 rounded overflow-hidden transform transition-all duration-300 scale-100 hover:scale-95" style="background: url(https://images.unsplash.com/photo-1558365849-6ebd8b0454b2?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60) center; background-size: cover;">
+              <div class="h-24"></div>
+              <h3 class="text-lg font-bold text-white leading-tight">Get Special Membership Cards</h3>
+          </a>
       </div>
     </div>
+
   </div>
 </section>
 
@@ -362,34 +378,6 @@
         <img src="https://livenationentertainmentplc.online/img/performer/aerosmith.jpeg" alt="Aerosmith" class="mb-4 rounded-md">
         <h3 class="text-xl font-bold mb-2">Aerosmith</h3>
         <p class="text-gray-600">American Rock Band</p>
-      </div>
-
-      <!-- Band Card 7 -->
-      <div class="bg-white p-8 shadow-md rounded-lg">
-        <img src="https://livenationentertainmentplc.online/img/banner/guns&roses.jpeg" alt="Guns N' Roses" class="mb-4 rounded-md">
-        <h3 class="text-xl font-bold mb-2">Guns N' Roses</h3>
-        <p class="text-gray-600">American Hard Rock Band</p>
-      </div>
-
-      <!-- Band Card 9 -->
-      <div class="bg-white p-8 shadow-md rounded-lg">
-        <img src="https://livenationentertainmentplc.online/img/performer/tesla1.png" alt="Tesla" class="mb-4 rounded-md">
-        <h3 class="text-xl font-bold mb-2">Tesla</h3>
-        <p class="text-gray-600">American Rock Band</p>
-      </div>
-
-      <!-- Band Card 3 -->
-      <div class="bg-white p-8 shadow-md rounded-lg">
-        <img src="https://livenationentertainmentplc.online/img/performer/speed.jpeg" alt="REO Speedwagon" class="mb-4 rounded-md">
-        <h3 class="text-xl font-bold mb-2">REO Speedwagon</h3>
-        <p class="text-gray-600">American Rock Band</p>
-      </div>
-
-      <!-- Band Card 8 -->
-      <div class="lg:hidden bg-white p-8 shadow-md rounded-lg">
-        <img src="https://livenationentertainmentplc.online/img/performer/america.jpeg" alt="America" class="mb-4 rounded-md">
-        <h3 class="text-xl font-bold mb-2">America</h3>
-        <p class="text-gray-600">American/English Rock Band</p>
       </div>
 
     </div>
