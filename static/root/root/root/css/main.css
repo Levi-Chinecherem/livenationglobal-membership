@@ -1,0 +1,88 @@
+/* Styles for Horizontal Scrolling Section */
+.scrolling-section {
+    overflow: hidden;
+  }
+  
+  .scrolling-container {
+    display: flex;
+    animation: scrollingAnimation 20s linear infinite;
+  }
+  
+  .scrolling-images {
+    display: flex;
+  }
+  
+  .scrolling-image {
+    width: 100px; /* Adjust the width of your images */
+    height: auto;
+    margin-right: 10px; /* Adjust the spacing between images */
+  }
+  
+  /* Keyframes for scrolling animation */
+  @keyframes scrollingAnimation {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  
+  
+
+
+  @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,500;0,700;0,900;1,300&display=swap");
+:root {
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-300: #d1d5db;
+  --gray-400: #93a3af;
+  --gray-500: #6b7280;
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+  --gray-900: #111827;
+}
+#light-theme {
+  --primary: #f3f4f6;
+  --comp-primary: #1f2937;
+  --bg: f1f5f9;
+  --gray-200: #e5e7eb;
+  --white: black;
+  --black: white;
+  --blur: 10px;
+}
+#dark-theme {
+  --primary: #1f2937;
+  --comp-primary: #f3f4f6;
+  --white: white;
+  --gray-200: #374151;
+  --black: black;
+}
+footer {
+  background-color: var(--primary);
+  color: var(--white);
+  box-shadow: 1px -5px var(--blur) rgba(0, 0, 0, 0.3);
+}
+* {
+  transition: all 0.3s ease;
+}
+.divider {
+  filter: blur(1px);
+}
+input,
+textarea {
+  background-color: var(--comp-primary);
+  color: var(--black);
+}
+.nav-modal {
+  background-color: var(--primary);
+}
+button {
+  background-color: var(--comp-primary);
+  color: var(--primary);
+}
+.social-wrapper {
+  background-color: white;
+  border: 1px solid var(--comp-primary);
+}
