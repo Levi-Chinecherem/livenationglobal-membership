@@ -92,6 +92,16 @@ DATABASES = {
     }
 }
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'livesmis_db',
+#         'USER': 'livesmis_user',
+#         'PASSWORD': 'Live@#123456789',
+#         'HOST': 'localhost',
+#         'PORT': '3306',
+#     }}
+
 # main_p/settings.py
 AUTH_USER_MODEL = 'accounts.CustomUser'
 
