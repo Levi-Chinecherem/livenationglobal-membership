@@ -62,7 +62,7 @@
     <nav class="absolute w-full z-10 hidden md:flex items-center justify-between bg-background p-4" id="desktop">
       <!-- Logo on the left -->
       <div>
-        <img src="https://www.livenationentertainment.com/wp-content/themes/lne/img/logo.png" alt="Logo" class="h-8 transition-transform duration-300 transform hover:scale-105">
+        <img src="{% static 'img/home/logo.webp' %}" alt="Logo" class="h-8 transition-transform duration-300 transform hover:scale-105">
       </div>
 
       <!-- Navigation links in the center -->
@@ -98,13 +98,13 @@
     <nav class="absolute w-full z-50 md:hidden flex flex-row items-center justify-between bg-background p-4">
       <!-- Logo on the left (you can use the same logo as desktop) -->
       <div>
-        <img src="https://www.livenationentertainment.com/wp-content/themes/lne/img/logo.png" alt="Logo" class="h-6 transition-transform duration-300 transform hover:scale-105">
+        <img src="{% static 'img/home/logo.webp' %}" alt="Logo" class="h-6 transition-transform duration-300 transform hover:scale-105">
       </div>
 
       <!-- Hamburger icon for mobile -->
       <div class="block lg:hidden">
         <button id="hamburger-icon" class="text-white hover:text-gray-300 focus:outline-none" aria-label="Toggle Mobile Navigation">
-          <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
           </svg>
         </button>

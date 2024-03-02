@@ -7,7 +7,7 @@
 
 <!-- Hero1 Section -->
 <section class="h-screen relative">
-  <div class="bg-cover bg-center w-full h-full relative" style="background-image: url('https://www.nathanreinds.nl/wp-content/uploads/2021/04/NATHANREINDS-ESC2021-Fotos-LR-website-126.jpg');">
+  <div class="bg-cover bg-center w-full h-full relative" style="background-image: url({% static 'img/home/bg1.jpg' %});">
     <!-- Overlay -->
     <div class="absolute top-0 left-0 w-full h-full inset-0 bg-black opacity-50"></div>
 
@@ -29,21 +29,21 @@
 
     <div class="flex -mx-1 mb-5">
       <div class="w-1/2 px-1">
-          <a href="{% url 'band_list' %}" class="block mb-2 p-5 rounded overflow-hidden transform transition-all duration-300 scale-100 hover:scale-95" style="background: url(https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60) center; background-size: cover;">
+          <a href="{% url 'band_list' %}" class="block mb-2 p-5 rounded overflow-hidden transform transition-all duration-300 scale-100 hover:scale-95" style="background: url({% static 'img/home/join-band.jpg' %}) center; background-size: cover;">
               <div class="h-24"></div>
               <h3 class="text-lg font-bold text-white leading-tight">Join Bands</h3>
           </a>
-          <a href="{% url 'create_vacation' %}" class="block mb-2 p-5 rounded overflow-hidden transform transition-all duration-300 scale-100 hover:scale-95" style="background: url(https://images.unsplash.com/photo-1534329539061-64caeb388c42?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60) center; background-size: cover;">
+          <a href="{% url 'create_vacation' %}" class="block mb-2 p-5 rounded overflow-hidden transform transition-all duration-300 scale-100 hover:scale-95" style="background: url({% static 'img/home/vacation.jpg' %}) center; background-size: cover;">
               <div class="h-32"></div>
               <h3 class="text-lg font-bold text-white leading-tight">Vacation</h3>
           </a>
       </div>
       <div class="w-1/2 px-1">
-          <a href="{% url 'create_autograph' %}" class="block mb-2 p-5 rounded overflow-hidden transform transition-all duration-300 scale-100 hover:scale-95" style="background: url(https://images.unsplash.com/photo-1526661934280-676cef25bc9b?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60) center; background-size: cover;">
+          <a href="{% url 'create_autograph' %}" class="block mb-2 p-5 rounded overflow-hidden transform transition-all duration-300 scale-100 hover:scale-95" style="background: url({% static 'img/home/autograph.jpg' %}) center; background-size: cover;">
               <div class="h-32"></div>
               <h3 class="text-lg font-bold text-white leading-tight">Meet & Greet/Autograph</h3>
           </a>
-          <a href="{% url 'general_membership' %}" class="block mb-2 p-5 rounded overflow-hidden transform transition-all duration-300 scale-100 hover:scale-95" style="background: url(https://images.unsplash.com/photo-1558365849-6ebd8b0454b2?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60) center; background-size: cover;">
+          <a href="{% url 'general_membership' %}" class="block mb-2 p-5 rounded overflow-hidden transform transition-all duration-300 scale-100 hover:scale-95" style="background: url({% static 'img/home/special-card.jpg' %}) center; background-size: cover;">
               <div class="h-24"></div>
               <h3 class="text-lg font-bold text-white leading-tight">Get Special Membership Cards</h3>
           </a>
@@ -234,19 +234,6 @@
     <div class="flex-shrink-0">
       <img src="{% static 'img/ho4.jpg' %}" alt="Image 4" class="w-32 h-auto mb-4">
     </div>
-    <!-- Duplicate these image elements to add more images -->
-    <div class="flex-shrink-0">
-      <img src="{% static 'img/ho1.jpg' %}" alt="Image 1" class="w-32 h-auto mb-4">
-    </div>
-    <div class="flex-shrink-0">
-      <img src="{% static 'img/ho2.jpg' %}" alt="Image 2" class="w-32 h-auto mb-4">
-    </div>
-    <div class="flex-shrink-0">
-      <img src="{% static 'img/ho3.jpg' %}" alt="Image 3" class="w-32 h-auto mb-4">
-    </div>
-    <div class="flex-shrink-0">
-      <img src="{% static 'img/ho4.jpg' %}" alt="Image 4" class="w-32 h-auto mb-4">
-    </div>
   </div>
 </section>
 
@@ -340,42 +327,42 @@
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       <!-- Band Card 1 -->
       <div class="bg-white p-8 shadow-md rounded-lg">
-        <img src="https://livenationentertainmentplc.online/img/performer/def.jpeg" alt="Def Leppard" class="mb-4 rounded-md">
+        <img src="{% static 'img/bands/def.jpeg' %}" alt="Def Leppard" class="mb-4 rounded-md">
         <h3 class="text-xl font-bold mb-2">Def Leppard</h3>
         <p class="text-gray-600">English Rock Band</p>
       </div>
 
       <!-- Band Card 2 -->
       <div class="bg-white p-8 shadow-md rounded-lg">
-        <img src="https://livenationentertainmentplc.online/img/performer/wolfmen.jpeg" alt="The Wolfmen" class="mb-4 rounded-md">
+        <img src="{% static 'img/bands/wolfmen.jpeg' %}" alt="The Wolfmen" class="mb-4 rounded-md">
         <h3 class="text-xl font-bold mb-2">The Wolfmen</h3>
         <p class="text-gray-600">English Rock Band</p>
       </div>
 
       <!-- Band Card 4 -->
       <div class="bg-white p-8 shadow-md rounded-lg">
-        <img src="https://livenationentertainmentplc.online/img/performer/poison.jpeg" alt="Poison" class="mb-4 rounded-md">
+        <img src="{% static 'img/bands/poison.jpeg' %}" alt="Poison" class="mb-4 rounded-md">
         <h3 class="text-xl font-bold mb-2">Poison</h3>
         <p class="text-gray-600">American Glam Metal Band</p>
       </div>
 
       <!-- Band Card 5 -->
       <div class="bg-white p-8 shadow-md rounded-lg">
-        <img src="https://livenationentertainmentplc.online/img/performer/styx.jpeg" alt="Styx" class="mb-4 rounded-md">
+        <img src="{% static 'img/bands/styx.jpeg' %}" alt="Styx" class="mb-4 rounded-md">
         <h3 class="text-xl font-bold mb-2">Styx</h3>
         <p class="text-gray-600">American Rock Band</p>
       </div>
 
       <!-- Band Card 6 -->
       <div class="bg-white p-8 shadow-md rounded-lg">
-        <img src="https://livenationentertainmentplc.online/img/banner/europe1.jpeg" alt="Europe" class="mb-4 rounded-md">
+        <img src="{% static 'img/bands/europe1.jpeg' %}" alt="Europe" class="mb-4 rounded-md">
         <h3 class="text-xl font-bold mb-2">Europe</h3>
         <p class="text-gray-600">Swedish Rock Band</p>
       </div>
 
       <!-- Band Card 10 -->
       <div class="bg-white p-8 shadow-md rounded-lg">
-        <img src="https://livenationentertainmentplc.online/img/performer/aerosmith.jpeg" alt="Aerosmith" class="mb-4 rounded-md">
+        <img src="{% static 'img/bands/aerosmith.jpeg' %}" alt="Aerosmith" class="mb-4 rounded-md">
         <h3 class="text-xl font-bold mb-2">Aerosmith</h3>
         <p class="text-gray-600">American Rock Band</p>
       </div>
@@ -385,12 +372,12 @@
 </section>
 
 <!-- New Section -->
-<section class="bg-cover bg-center relative py-16" style="background-image: url('https://live.staticflickr.com/2175/5696701124_9e5b83042c.jpg');">
+<section class="bg-cover bg-center relative py-16" style="background-image: url({% static 'img/home/bg2.jpg' %});">
   <div class="container mx-auto text-white text-center">
 
       <!-- Image Section -->
       <div class="mb-4">
-          <img src="https://www.livenationentertainment.com/wp-content/uploads/2018/11/question-mark.png" alt="Your Image" class="mx-auto h-20 w-20 rounded-full border-4 border-mainRed">
+          <img src="{% static 'img/home/question-mark.webp' %}" alt="Your Image" class="mx-auto h-20 w-20 rounded-full border-4 border-mainRed">
       </div>
 
       <!-- Main Header -->

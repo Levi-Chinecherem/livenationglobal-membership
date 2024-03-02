@@ -1,9 +1,10 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
 <!-- Hero Section -->
 <section class="relative" style="height:30vh">
-    <div class="bg-cover bg-center w-full h-full relative" style="background-image: url('https://www.nathanreinds.nl/wp-content/uploads/2021/04/NATHANREINDS-ESC2021-Fotos-LR-website-126.jpg');">
+    <div class="bg-cover bg-center w-full h-full relative" style="background-image: url({% static 'img/home/bg2.jpg' %});">
         <!-- Content -->
         <h1 class="text-3xl font-bold text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">AUTOGRAPH</h1>
     </div>
@@ -14,11 +15,11 @@
       <div class="group grid w-full grid-cols-2">
         <div class="relative flex before:block before:absolute before:h-1/6 before:w-2 before:bg-stone-200 before:top-0 before:right-0 before:rounded-lg  before:transition-all group-hover:before:bg-orange-300 overflow-hidden">
           <div class="absolute bottom-0 right-0 bg-blue-500 w-4/6 overflow-hidden flex flex-col justify-center rounded-xl group-hover:bg-sky-600 transition-all shadow-2xl">
-            <img src="https://picsum.photos/800/800" alt="">
+            <img src="{% static 'img/ho10.jpg' %}" alt="">
           </div>
           
           <div class="h-2/3 rounded-xl overflow-hidden">
-            <img src="https://picsum.photos/800/800" class="h-full" alt="">
+            <img src="{% static 'img/ho10.jpg' %}" class="h-full" alt="">
           </div>
           <a class="-rotate-90 font-bold mt-2 mb-8 r gap-2 h-16 text-2xl leading-7" href="" target="">
             <span>Meet& <br> Greet</span>

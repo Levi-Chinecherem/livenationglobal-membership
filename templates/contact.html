@@ -1,10 +1,11 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
 
 <!-- Hero Section -->
 <section class=" relative" style="height:30vh">
-  <div class="bg-cover bg-center w-full h-full relative" style="background-image: url('https://www.nathanreinds.nl/wp-content/uploads/2021/04/NATHANREINDS-ESC2021-Fotos-LR-website-126.jpg');">
+  <div class="bg-cover bg-center w-full h-full relative" style="background-image: url({% static 'img/home/bg2.jpg' %});">
   <!-- Content -->
   <h1 class="text-3xl font-bold text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">CONTACT US</h1>
   </div>
