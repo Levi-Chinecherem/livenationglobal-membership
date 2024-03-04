@@ -43,7 +43,7 @@
         </div>
       </div>
     </div>
-  </div>
+</div>
 
 <div class="bg-grayishBlack mx-auto py-10">
     <div class="max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-md">
@@ -111,8 +111,18 @@
                 </select>
             </div>
 
+            <div class="mb-4">
+              <label for="price" class="block text-gray-700 text-sm font-bold mb-2">Select Pricing Option</label>
+              <select id="price" name="price" class="w-full p-2 border rounded-md" required>
+                  {% for pricing_option in pricing_options %}
+                      <option value="{{ pricing_option.id }}">{{ pricing_option.name }} - ${{ pricing_option.price }}</option>
+                  {% endfor %}
+              </select>
+            </div>
+
             <button type="submit" class="bg-mainRed text-white py-2 px-4 rounded-full text-sm hover:bg-darkRed transition-colors duration-300">Submit</button>
         </form>
     </div>
 </div>
+
 {% endblock %}

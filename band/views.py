@@ -1,6 +1,6 @@
 # band/views.py
 from django.shortcuts import render, get_object_or_404, redirect
-from .models import Band, Autograph, Vacation, MembershipType, Membership
+from .models import Band, VacationPricing, Autograph, Vacation, MembershipType, Membership
 from django.contrib import messages
 from django.core.mail import send_mail
 from accounts.models import CustomUser
@@ -79,6 +79,8 @@ def create_vacation(request):
         select_week = request.POST.get('select_week')
         emergency_contact_phone = request.POST.get('emergency_contact_phone')
         preferred_payment_method = request.POST.get('preferred_payment_method')
+        price_id = request.POST.get('price')
+        selected_price = VacationPricing.objects.get(id=price_id)
 
         # Assuming you have a function to get the payment choices
         payment_choices = Vacation.PAYMENT_CHOICES()
@@ -110,7 +112,8 @@ def create_vacation(request):
             special_requests=special_requests,
             select_week=select_week,
             emergency_contact_phone=emergency_contact_phone,
-            preferred_payment_method=preferred_payment_method
+            preferred_payment_method=preferred_payment_method,
+            price=selected_price 
         )
 
         messages.success(request, 'Vacation created successfully.')
@@ -118,9 +121,11 @@ def create_vacation(request):
 
     # Assuming you have a function to get the payment choices
     payment_choices = Vacation.PAYMENT_CHOICES
+    pricing_options = VacationPricing.objects.all()
 
     context = {
         'payment_choices': payment_choices,
+        'pricing_options': pricing_options,
     }
 
     return render(request, 'band/vacation.html', context)

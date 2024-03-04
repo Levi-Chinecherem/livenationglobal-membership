@@ -22,7 +22,7 @@ class MembershipType(models.Model):
     price = models.DecimalField(max_digits=8, decimal_places=2)
 
     def __str__(self):
-        return f"{self.band.name} - {self.name}"
+        return f"{self.name} - {self.name}"
 
     class Meta:
         verbose_name = "Membership Type"
@@ -47,12 +47,24 @@ class Membership(models.Model):
     membership_type = models.ForeignKey(MembershipType, on_delete=models.CASCADE)
 
     def __str__(self):
-        return f"{self.user.email} - {self.band.name} - {self.membership_type.name} - {self.payment_type.name}"
+        return f"{self.user.email} - {self.band} - {self.membership_type} - {self.payment_type}"
 
     class Meta:
         verbose_name = "Membership"
         verbose_name_plural = "Memberships"
 
+        
+class VacationPricing(models.Model):
+    name = models.CharField(max_length=255, default="Week 1")
+    price = models.DecimalField(max_digits=8, decimal_places=0, default="1000")
+
+    def __str__(self):
+        return f"{self.name} - {self.price}"
+
+    class Meta:
+        verbose_name = "Vacation Price"
+        verbose_name_plural = "Vacation Prices"
+        
 class Vacation(models.Model):
     PAYMENT_CHOICES = [
         ('Zelle', 'Zelle'),
@@ -76,6 +88,7 @@ class Vacation(models.Model):
     select_week = models.CharField(max_length=50)
     emergency_contact_phone = models.CharField(max_length=20)
     preferred_payment_method = models.CharField(max_length=50, choices=PAYMENT_CHOICES)
+    price = models.ForeignKey(VacationPricing, on_delete=models.CASCADE, related_name='vacation_price')
 
     def __str__(self):
         return f"{self.user.email} - {self.name} Vacation"

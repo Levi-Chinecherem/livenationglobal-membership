@@ -1,7 +1,7 @@
 # band/admin.py
 from django.contrib import admin
 from django.utils.translation import gettext_lazy as _
-from .models import GeneralMembership, Autograph, Band, Vacation, MembershipType, Membership
+from .models import VacationPricing, GeneralMembership, Autograph, Band, Vacation, MembershipType, Membership
 
 admin.site.site_title = _('LiveNationGlobal Admin')
 admin.site.site_header = _('LiveNationGlobal Administration')
@@ -36,6 +36,7 @@ class AutographAdmin(admin.ModelAdmin):
     search_fields = ['user__email', 'name', 'country', 'band']
     list_filter = ['preferred_dates']
 
+admin.site.register(VacationPricing)
 admin.site.register(Autograph, AutographAdmin)
 admin.site.register(Vacation, VacationAdmin)
 admin.site.register(Band, BandAdmin)
