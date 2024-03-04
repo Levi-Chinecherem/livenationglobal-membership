@@ -193,17 +193,30 @@ CKEDITOR_MEDIA_PREFIX = '/resource/media/ckeditor/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'osender6@gmail.com'
-EMAIL_HOST_PASSWORD = 'zfhmpxnlckhzjfeg'
-EMAIL_USE_SSL = False
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True
+# EMAIL_HOST_USER = 'osender6@gmail.com'
+# EMAIL_HOST_PASSWORD = 'zfhmpxnlckhzjfeg'
+# EMAIL_USE_SSL = False
 
 # Additional settings for Gmail
 # DEFAULT_FROM_EMAIL = 'your-email@gmail.com'  # Set your default 'from' email address
 # SERVER_EMAIL = 'your-email@gmail.com'  # Set your server email address
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'mail.privateemail.com'  # Update this with your email host server (e.g., smtp.yourdomain.com)
+EMAIL_PORT = 587  # Use the appropriate port for your email provider
+EMAIL_USE_TLS = True  # Set to True if your email provider requires TLS
+EMAIL_HOST_USER = 'services@livenationglobal.live'  # Your domain email
+EMAIL_HOST_PASSWORD = '0123456789Mails@#'
+EMAIL_USE_SSL = False
+
+DEFAULT_FROM_EMAIL = 'services@livenationglobal.live'  # Set your default 'from' email address
+SERVER_EMAIL = 'services@livenationglobal.live'  # Set your server email address
+
 
 # Set the email timeout (optional)
 EMAIL_TIMEOUT = 100  # seconds
